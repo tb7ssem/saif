@@ -11270,31 +11270,27 @@ p {
 
 /* blog wrapper */
 .blog-card {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
+  flex-direction: column; /* Make content stack vertically */
   text-align: left;
   border: 1px solid #dee2e6;
-  margin-bottom: 30px;
-  overflow: hidden;
   margin: 0 15px 30px;
+  overflow: hidden;
 }
 
 .blog-card .img-holder {
-  min-width: 540px;
-  max-width: 540px;
+  width: 100%; /* Image takes the full width of the card */
+  height: auto; 
 }
 
 .blog-card .img-holder img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover; /* Ensure the image covers the area without stretching */
 }
 
 .blog-card .content-holder {
-  padding: 30px 20px 30px 30px;
+  padding: 20px 20px 30px 20px;
 }
 
 .blog-card .content-holder .title {
@@ -11305,11 +11301,6 @@ p {
 
 .blog-card .content-holder .post-details {
   margin: 15px 0 15px !important;
-}
-
-.blog-card .content-holder .post-details i {
-  display: inline-block;
-  width: 15px;
 }
 
 .blog-card .content-holder .post-details a {
@@ -11329,23 +11320,13 @@ p {
   font-size: 13px;
 }
 
-.blog-card .content-holder .read-more i {
-  position: relative;
-  top: 1px;
-}
-
 @media (max-width: 991.98px) {
   .blog-card {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column; /* Ensure vertical stacking on smaller screens */
   }
   .blog-card .img-holder {
     width: 100%;
-    max-width: 100%;
-    min-width: 100%;
+    height: 250px; /* Optionally adjust the height for smaller screens */
   }
 }
 
